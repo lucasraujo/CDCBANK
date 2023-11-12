@@ -3,6 +3,7 @@ import path from 'path';
 import 'reflect-metadata';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
+
 const dataSourceConfig = (): DataSourceOptions => {
   const entitiesPath: string = path.join(__dirname, './entities/**.{ts,js}');
   const migrationPath: string = path.join(__dirname, './migrations/**.{ts,js}');
@@ -22,6 +23,7 @@ const dataSourceConfig = (): DataSourceOptions => {
     };
   }
 
+
   return {
     type: 'mysql',
     url: dbUrl,
@@ -29,7 +31,7 @@ const dataSourceConfig = (): DataSourceOptions => {
     logging: true,
     entities: [entitiesPath],
     migrations: [migrationPath],
-    
+    ssl:{"rejectUnauthorized":true},
   };
 };
 
