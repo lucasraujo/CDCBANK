@@ -4,7 +4,7 @@ import Employee from "./employee.entity";
 
 @Entity("companies")
 class Company {
-    @PrimaryGeneratedColumn()
+    @PrimaryColumn()
     id:string
 
     @Column({ type: "varchar", length: 255 })
