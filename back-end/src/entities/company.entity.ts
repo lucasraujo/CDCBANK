@@ -1,5 +1,6 @@
-import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import Employee from "./employee.entity";
+import { join } from "path";
 
 
 @Entity("companies")
@@ -11,6 +12,7 @@ class Company {
     name: string;
 
     @OneToMany(() => Employee, employee => employee.company)
+    @JoinColumn()
     employees: Employee[];
 
 

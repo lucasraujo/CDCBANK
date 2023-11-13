@@ -21,8 +21,7 @@ class Employee {
     salary:number;
 
 
-    @ManyToOne(() => Company )
-    @JoinColumn()
+    @ManyToOne(() => Company, company => company.employees )
     company: Company;
 
 }
