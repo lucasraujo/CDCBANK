@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import Company from "./company.entity";
 
 
@@ -21,7 +21,8 @@ class Employee {
     salary:number;
 
 
-    @ManyToOne(() => Company )
+    @ManyToOne(() => Company , {createForeignKeyConstraints: false, eager: true})
+    @JoinColumn()
     company: Company;
 
 }
