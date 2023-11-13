@@ -10,7 +10,7 @@ class Company {
     @Column({ type: "varchar", length: 255 })
     name: string;
 
-    @OneToMany(() => Employee, employee => employee.company, {createForeignKeyConstraints: false, eager: true})
+    @OneToMany(() => Employee, employee => employee.company)
     employees: Employee[];
 
 

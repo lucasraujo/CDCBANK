@@ -21,7 +21,7 @@ class Employee {
     salary:number;
 
 
-    @ManyToOne(() => Company , {createForeignKeyConstraints: false, eager: true})
+    @ManyToOne(() => Company )
     @JoinColumn()
     company: Company;
 
