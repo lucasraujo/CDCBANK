@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { StyledHeader } from "./style";
-import { DashboardContext } from "../../contexts/dashboardContext";
+import { DashboardContext } from "../../contexts/DashboardContext";
 
 export const HeaderDashboard = () => {
   const { company, getOneCompany, buttonExitHandler, reload } =

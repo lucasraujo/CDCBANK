@@ -4,10 +4,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyles } from "./style/global";
-import { LoginProvider } from "./contexts/loginContext";
-import { DashboardProvider } from "./contexts/dashboardContext";
-import { FilterProvider } from "./contexts/filterContext/intdex";
-import { EmployeeProvider } from "./contexts/employeeContext";
+import { LoginProvider } from "./contexts/LoginContext";
+import { DashboardProvider } from "./contexts/DashboardContext";
+import { FilterProvider } from "./contexts/FilterContext/intdex";
+import { EmployeeProvider } from "./contexts/EmployeeContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

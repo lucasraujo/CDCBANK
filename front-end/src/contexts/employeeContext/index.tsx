@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { iEmployeeContext, iEmployeeProvider } from "./types";
 import api from "../../services/api";
 import { iEmployeeRequest, iCompany, iEmployee } from "../../types";
-import { DashboardContext } from "../dashboardContext";
+import { DashboardContext } from "../DashboardContext";
 import { currency, mask } from "remask";
 
 export const EmployeeContext = createContext({} as iEmployeeContext);

@@ -6,9 +6,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { employeeSchema } from "./schema";
-import { EmployeeContext } from "../../contexts/employeeContext";
+import { EmployeeContext } from "../../contexts/EmployeeContext";
 import { iEmployee } from "../../types";
-import { DashboardContext } from "../../contexts/dashboardContext";
+import { DashboardContext } from "../../contexts/DashboardContext";
 
 export const ModalUpdate = () => {
   const { setReload, reload } = useContext(DashboardContext);

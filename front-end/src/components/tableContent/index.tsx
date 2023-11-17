@@ -4,7 +4,7 @@ import { maskDate } from "../../hooks/date";
 import { maskMoney } from "../../hooks/money";
 import { StyledTableContent } from "./styled";
 import { iEmployee } from "../../types";
-import { EmployeeContext } from "../../contexts/employeeContext";
+import { EmployeeContext } from "../../contexts/EmployeeContext";
 
 type tEmployeeProps = {
   employee: iEmployee;

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { StyledModalExclude } from "./style";
-import { EmployeeContext } from "../../contexts/employeeContext";
+import { EmployeeContext } from "../../contexts/EmployeeContext";
 
 export const ModalExclude = () => {
   const { deleteEmployee, employeeToDelete, setEmployeeToDelete } =

@@ -1,7 +1,7 @@
 import { MouseEventHandler, useContext, useState } from "react";
 import { ModalRegister } from "../ModalRegister";
 import { StyledSectionSeachDashboard } from "./style";
-import { FilterContext } from "../../contexts/filterContext/intdex";
+import { FilterContext } from "../../contexts/FilterContext/intdex";
 
 export const SectionSeachDashboard = () => {
   const { setFil, inputValue, setInputValue } = useContext(FilterContext);

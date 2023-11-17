@@ -1,16 +1,16 @@
 import { useContext, useEffect } from "react";
 import { StyledTableOfEmployee } from "./style";
-import { DashboardContext } from "../../contexts/dashboardContext";
-import { FilterContext } from "../../contexts/filterContext/intdex";
-import { TableContent } from "../tableContent";
+import { DashboardContext } from "../../contexts/DashboardContext";
+import { FilterContext } from "../../contexts/FilterContext/intdex";
+import { TableContent } from "../TableContent";
 import { createPortal } from "react-dom";
 import { ModalExclude } from "../ModalExclude";
 import { ModalUpdate } from "../ModalUpdate";
-import { EmployeeContext } from "../../contexts/employeeContext";
+import { EmployeeContext } from "../../contexts/EmployeeContext";
 
 export const TableOfEmployee = () => {
   const { company, getOneCompany, reload } = useContext(DashboardContext);
-  const {employeeToUpdate} = useContext(EmployeeContext)
+  const { employeeToUpdate } = useContext(EmployeeContext);
 
   const { fil } = useContext(FilterContext);
   useEffect(() => {

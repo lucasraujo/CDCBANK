@@ -3,8 +3,8 @@ import { StyledModalRegister } from "./style";
 import { mask, unMask, currency } from "remask";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { EmployeeContext } from "../../contexts/employeeContext";
-import { DashboardContext } from "../../contexts/dashboardContext";
+import { EmployeeContext } from "../../contexts/EmployeeContext";
+import { DashboardContext } from "../../contexts/DashboardContext";
 import { employeeSchema, tEmployee } from "./types";
 
 export const ModalRegister = () => {
