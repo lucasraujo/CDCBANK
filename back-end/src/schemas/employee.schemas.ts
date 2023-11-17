@@ -6,13 +6,12 @@ const employeeSchema = z.object({
   cpf: z.string().length(11),
   birthdate: z.string(),
   salary: z.number(),
-
 });
 
 const createEmployeeSchema = employeeSchema.omit({
-    id:true,
-})
+  id: true,
+});
 
-const updateEmployeeSchema = createEmployeeSchema.partial()
+const updateEmployeeSchema = createEmployeeSchema.partial();
 
-export { employeeSchema, createEmployeeSchema, updateEmployeeSchema }
+export { employeeSchema, createEmployeeSchema, updateEmployeeSchema };

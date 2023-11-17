@@ -1,35 +1,39 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import Employee from "../../entities/employee.entity";
-import { IEmployee, IEmployeeCreate, IEmployeeUpdate } from "../../interfaces/employee.interfaces";
+import {
+  IEmployee,
+  IEmployeeCreate,
+  IEmployeeUpdate,
+} from "../../interfaces/employee.interfaces";
 import Company from "../../entities/company.entity";
 import { AppError } from "../../errors";
 import { error } from "console";
 
+const updateEmployeeServices = async (
+  employeeId: string,
+  employeeData: any
+): Promise<IEmployee> => {
+  const employeeRepository: Repository<Employee> =
+    AppDataSource.getRepository(Employee);
 
-const updateEmployeeServices = async (employeeId:string, employeeData: any ): Promise<IEmployee> =>{
-    const employeeRepository: Repository<Employee> = AppDataSource.getRepository(Employee);
+  const employee = await employeeRepository.findOne({
+    where: {
+      id: employeeId,
+    },
+  });
 
-    const employee = await employeeRepository.findOne({
-        where:{
-            id: employeeId
-        }
-    })
+  if (employee == null) {
+    throw new AppError("employee not found", 404);
+  }
 
-    if(employee==null){
-        throw new AppError("employee not found", 404)
-    }
+  const objUpdate: IEmployeeCreate = { ...employee, ...employeeData };
 
+  const newUser = employeeRepository.create(objUpdate);
 
-    const objUpdate :IEmployeeCreate = {...employee, ...employeeData}
+  await employeeRepository.save(newUser);
 
-    const newUser = employeeRepository.create( objUpdate)
+  return newUser;
+};
 
-    await employeeRepository.save(newUser)
-
-    return newUser
-    
-
-}
-
-export { updateEmployeeServices }
+export { updateEmployeeServices };

@@ -1,29 +1,25 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import Company from "./company.entity";
-
 
 @Entity("employees")
 class Employee {
+  @PrimaryGeneratedColumn()
+  id: string;
 
-    @PrimaryColumn()
-    id:string
+  @Column({ type: "varchar", length: 255 })
+  name: string;
 
-    @Column({ type: "varchar", length: 255 })
-    name: string;
+  @Column({ type: "varchar", length: 11 })
+  cpf: string;
 
-    @Column({type:"varchar", length:11, unique:true})
-    cpf:string;
+  @Column({ type: "date" })
+  birthdate: string;
 
-    @Column({type:"date"})
-    birthdate:string;
+  @Column({ type: "int" })
+  salary: number;
 
-    @Column({type:"int"})
-    salary:number;
-
-
-    @ManyToOne(() => Company, company => company.employees )
-    company: Company;
-
+  @ManyToOne(() => Company, (company) => company.employees)
+  company: Company;
 }
 
-export default Employee
+export default Employee;
