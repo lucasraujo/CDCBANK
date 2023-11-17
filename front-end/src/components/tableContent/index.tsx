@@ -11,7 +11,7 @@ type tEmployeeProps = {
 };
 
 export const TableContent = ({ employee }: tEmployeeProps) => {
-  const { setEmployeeToUpdate, setEmployeeToDelete, openModalUpdate } =
+  const { setEmployeeToDelete, openModalUpdate } =
     useContext(EmployeeContext);
 
   return (

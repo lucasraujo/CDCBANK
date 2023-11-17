@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { EmployeeContext } from "../../contexts/EmployeeContext";
 import { DashboardContext } from "../../contexts/DashboardContext";
-import { employeeSchema, tEmployee } from "./types";
+import { employeeSchema, tEmployee } from "./schema";
 
 export const ModalRegister = () => {
   const { createEmployee, modalIsOpen, setModalIsOpen } =

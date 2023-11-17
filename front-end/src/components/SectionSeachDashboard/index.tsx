@@ -1,4 +1,4 @@
-import { MouseEventHandler, useContext, useState } from "react";
+import { useContext } from "react";
 import { ModalRegister } from "../ModalRegister";
 import { StyledSectionSeachDashboard } from "./style";
 import { FilterContext } from "../../contexts/FilterContext/intdex";

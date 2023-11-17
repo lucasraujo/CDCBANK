@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { StyledModalExclude } from "./style";
 import { EmployeeContext } from "../../contexts/EmployeeContext";
 

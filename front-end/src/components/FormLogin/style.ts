@@ -7,6 +7,10 @@ export const StyledFormLogin = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
 
   h1 {
     font-size: 2rem;
@@ -19,14 +23,24 @@ export const StyledFormLogin = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @media (max-width: 768px) {
+        align-items: center;
+      }
 
     label {
       margin-bottom: 0.25rem;
+      @media (max-width: 768px) {
+        display: none;
+      }
+
     }
 
     select {
       width: 100%;
       padding: 0.5rem;
+      @media (max-width: 768px) {
+        width: 90%;
+      }
     }
   }
 
@@ -41,5 +55,8 @@ export const StyledFormLogin = styled.div`
     box-shadow: -2px 22px 45px 0px rgba(0, 0, 0, 0.52);
     -webkit-box-shadow: -2px 22px 45px 0px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: -2px 22px 45px 0px rgba(0, 0, 0, 0.52);
+    @media (max-width: 768px) {
+        width: 90%;
+      }
   }
 `;

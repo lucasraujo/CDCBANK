@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { StyledFormLogin } from "./style";
 import { LoginContext } from "../../contexts/LoginContext";
-import { useNavigate } from "react-router-dom";
 
 export const FormLogin = () => {
   const { getAllCompanies, allCompanies, handleButton, setSelectValue } =
