@@ -6,14 +6,16 @@ import { TableContent } from "../tableContent";
 import { createPortal } from "react-dom";
 import { ModalExclude } from "../ModalExclude";
 import { ModalUpdate } from "../ModalUpdate";
+import { EmployeeContext } from "../../contexts/employeeContext";
 
 export const TableOfEmployee = () => {
-  const { company, getOneCompany } = useContext(DashboardContext);
+  const { company, getOneCompany, reload } = useContext(DashboardContext);
+  const {employeeToUpdate} = useContext(EmployeeContext)
 
   const { fil } = useContext(FilterContext);
   useEffect(() => {
     getOneCompany();
-  }, [company]);
+  }, [employeeToUpdate]);
 
   const employees = company.employees?.filter((emp) =>
     emp.name.toLowerCase().includes(fil.toLowerCase())
