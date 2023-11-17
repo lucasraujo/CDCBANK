@@ -1,7 +1,5 @@
-import {currency} from "remask"
+import { currency } from "remask";
 
 export const maskMoney = (money: number) => {
-
-    return currency.mask({ locale: 'pt-BR', currency: 'BRL', value: money })
-
-}
+  return currency.mask({ locale: "pt-BR", currency: "BRL", value: money });
+};

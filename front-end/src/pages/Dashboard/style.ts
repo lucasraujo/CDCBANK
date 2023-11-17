@@ -1,8 +1,3 @@
 import styled from "styled-components";
 
-export const StyledDashboard = styled.div`
-
-    
-
-
-`
+export const StyledDashboard = styled.div``;

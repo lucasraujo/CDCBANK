@@ -2,13 +2,7 @@ import styled from "styled-components";
 
 export const StyledModalExclude = styled.div`
 
-    .buttonExclude{
-        background-color: var(--red);
-        color: var(--white);
-        padding: 0.5rem 2rem;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-    }
+
 
     .back{
         position: fixed;

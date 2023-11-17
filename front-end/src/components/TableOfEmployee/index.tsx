@@ -1,46 +1,41 @@
-import { useContext } from "react"
-import { StyledTableOfEmployee } from "./style"
-import { DashboardContext } from "../../contexts/dashboardContext"
-import { maskCpf } from "../../hooks/cpf"
-import { maskDate } from "../../hooks/date"
-import { maskMoney } from "../../hooks/money"
-import { ModalExclude } from "../ModalExclude"
-import { ModalUpadate } from "../ModalUpdate"
+import { useContext, useEffect } from "react";
+import { StyledTableOfEmployee } from "./style";
+import { DashboardContext } from "../../contexts/dashboardContext";
+import { FilterContext } from "../../contexts/filterContext/intdex";
+import { TableContent } from "../tableContent";
+import { createPortal } from "react-dom";
+import { ModalExclude } from "../ModalExclude";
+import { ModalUpdate } from "../ModalUpdate";
 
-export const TableOfEmployee = ()=>{ 
+export const TableOfEmployee = () => {
+  const { company, getOneCompany } = useContext(DashboardContext);
 
-    const {company} = useContext(DashboardContext)
+  const { fil } = useContext(FilterContext);
+  useEffect(() => {
+    getOneCompany();
+  }, [company]);
 
+  const employees = company.employees?.filter((emp) =>
+    emp.name.toLowerCase().includes(fil.toLowerCase())
+  );
 
-    return(
-        <StyledTableOfEmployee>
-            <table>
-                <tr className="trTitle">
-                    <td>CPF</td>
-                    <td>Name</td>
-                    <td>Nascimento</td>
-                    <td>Salário</td>
-                    <td>Ações</td>
-                </tr>
+  return (
+    <StyledTableOfEmployee>
+      <table>
+        <tr className="trTitle">
+          <td>CPF</td>
+          <td>Name</td>
+          <td>Nascimento</td>
+          <td>Salário</td>
+          <td>Ações</td>
+        </tr>
 
-                {
-                    company.employees?.map((elem)=>
-                    <tr className="trValue" key={elem.id} id={elem.id.toString()}>
-                        <td>{maskCpf(elem.cpf)}</td>
-                        <td>{elem.name}</td>
-                        <td>{maskDate(elem.birthdate)}</td>
-                        <td>{maskMoney(elem.salary)}</td>
-                    <td className="tdButtons">
-                            <ModalUpadate elem={elem} key={elem.id}/>
-                            <ModalExclude elem={elem} />
-
-                    </td>
-                </tr>)
-                }
-            </table>
-
-            
-        </StyledTableOfEmployee>
-    )
-
-}
+        {employees?.map((employee) => (
+          <TableContent employee={employee} key={employee.id} />
+        ))}
+      </table>
+      {createPortal(<ModalUpdate />, document.body)}
+      {createPortal(<ModalExclude />, document.body)}
+    </StyledTableOfEmployee>
+  );
+};

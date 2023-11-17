@@ -1,18 +1,37 @@
-import { ModalRegister } from "../ModalRegister"
-import { StyledSectionSeachDashboard } from "./style"
+import { MouseEventHandler, useContext, useState } from "react";
+import { ModalRegister } from "../ModalRegister";
+import { StyledSectionSeachDashboard } from "./style";
+import { FilterContext } from "../../contexts/filterContext/intdex";
 
-export const SectionSeachDashboard = () => { 
+export const SectionSeachDashboard = () => {
+  const { setFil, inputValue, setInputValue } = useContext(FilterContext);
 
-    return(
-        <StyledSectionSeachDashboard>
+  const filterClickFunction = () => {
+    setFil(inputValue);
 
-            <div className="divInputButton">
-                <input type="text" placeholder="Pesquisa" className="inputSeach" />
-                <button className="searchButton">Buscar</button>
-            </div>
+    setInputValue("");
+  };
 
-            <ModalRegister/>
+  return (
+    <StyledSectionSeachDashboard>
+      <div className="divInputButton">
+        <input
+          type="text"
+          placeholder="Pesquisa"
+          className="inputSeach"
+          value={inputValue}
+          onChange={(ev) => setInputValue(ev.target.value)}
+        />
+        <button
+          className="searchButton"
+          type="button"
+          onClick={() => filterClickFunction()}
+        >
+          Buscar
+        </button>
+      </div>
 
-        </StyledSectionSeachDashboard>
-    )
-}
+      <ModalRegister />
+    </StyledSectionSeachDashboard>
+  );
+};
