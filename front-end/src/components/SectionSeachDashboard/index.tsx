@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ModalRegister } from "../ModalRegister";
 import { StyledSectionSeachDashboard } from "./style";
-import { FilterContext } from "../../contexts/FilterContext/intdex";
+import { FilterContext } from "../../contexts/FilterContext";
 
 export const SectionSeachDashboard = () => {
   const { setFil, inputValue, setInputValue } = useContext(FilterContext);

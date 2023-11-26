@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { GlobalStyles } from "./style/global";
 import { LoginProvider } from "./contexts/LoginContext";
 import { DashboardProvider } from "./contexts/DashboardContext";
-import { FilterProvider } from "./contexts/FilterContext/intdex";
+import { FilterProvider } from "./contexts/FilterContext";
 import { EmployeeProvider } from "./contexts/EmployeeContext";
 
 const root = ReactDOM.createRoot(

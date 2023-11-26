@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { StyledTableOfEmployee } from "./style";
 import { DashboardContext } from "../../contexts/DashboardContext";
-import { FilterContext } from "../../contexts/FilterContext/intdex";
+import { FilterContext } from "../../contexts/FilterContext";
 import { TableContent } from "../TableContent";
 import { createPortal } from "react-dom";
 import { ModalExclude } from "../ModalExclude";
