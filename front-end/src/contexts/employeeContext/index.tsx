@@ -87,8 +87,3 @@ export const EmployeeProvider = ({ children }: iEmployeeProvider) => {
     </EmployeeContext.Provider>
   );
 };
-
-interface isd {
-  valueUpdateCpf: string;
-  setValueUpdateCpf: React.Dispatch<React.SetStateAction<string>>;
-}

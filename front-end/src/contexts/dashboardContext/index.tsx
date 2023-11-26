@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import { iCompany } from "../../types";
 import { FilterContext } from "../FilterContext";
-import { set } from "react-hook-form";
 
 export const DashboardContext = createContext({} as iDashboardTypes);
 
