@@ -1,6 +1,6 @@
 # CDCBANK
 
-Projeto em nodejs para cadastro de funconarios
+Projeto em nodejs para cadastro de funcionarios
 
 ## Requisitos Prévios
 
